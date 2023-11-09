@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EntityLayer.Entities
+{
+    public class Category
+    {
+        [Key]
+        public int CategoryID { get; set; }
+
+        [StringLength(50)]
+        public string CategoryName { get; set; }
+
+        //ilişki kurdum her filmin bir kategorisi olmak zorunda
+        public ICollection<Film> Films { get; set; }
+        
+    }
+}
